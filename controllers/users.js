@@ -64,7 +64,7 @@ exports.updateProfile = async (req, res) => {
     let { firstName, email, password, image } = req.body;
     let { id } = req.user;
 
-    const user = await User.findOne({ where: { id: req.user.id } });
+    const user = await User.findOne({ where: { id } });
     if (!user) {
       throw new Error("user not found");
     }
